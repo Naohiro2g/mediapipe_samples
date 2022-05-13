@@ -34,6 +34,8 @@ with mp_hands.Hands(max_num_hands=2,
         image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
         # cv2 is in BGR color space.
 
+        image_height, image_width, _ = image.shape
+
         # Draw the hand annotations on the image.
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
@@ -43,6 +45,10 @@ with mp_hands.Hands(max_num_hands=2,
                             mp_hands.HAND_CONNECTIONS,
                             mp_drawing_styles.get_default_hand_landmarks_style(),
                             mp_drawing_styles.get_default_hand_connections_style())
+                print('Index finger tip coordinates: (',
+                      f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x * image_width:.1f}, '
+                      f'{hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y * image_height:.1f})'
+                      )
         # Flip the image horizontally for selfie-view.
         image = cv2.flip(image, 1)
         # Draw the title and FPS
