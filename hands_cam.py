@@ -12,6 +12,10 @@ mp_hands = mp.solutions.hands  # type: ignore
 
 # For webcam input:
 cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    print("Sorry, no webcam found. Check your connection or privacy settings.")
+    exit()
+
 cvFpsCalc = cvfpscalc.CvFpsCalc(buffer_len=60)
 with mp_hands.Hands(max_num_hands=2,
                     model_complexity=0,
