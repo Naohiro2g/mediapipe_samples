@@ -10,7 +10,7 @@ import param_MCJE as param
 
 mc = Minecraft.create(port=param.PORT_MC)
 mc.postToChat('Mediapipe Hands demo in Minecraft')
-#mc.setBlocks(-2, 86, -2,  2, 88, 2,  param.GOLD_BLOCK)
+# mc.setBlocks(-2, 86, -2,  2, 88, 2,  param.GOLD_BLOCK)
 
 mp_drawing = mp.solutions.drawing_utils  # type: ignore
 mp_drawing_styles = mp.solutions.drawing_styles  # type: ignore
@@ -58,17 +58,17 @@ with mp_hands.Hands(max_num_hands=2,
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
                 mp_drawing.draw_landmarks(
-                            image,
-                            hand_landmarks,
-                            mp_hands.HAND_CONNECTIONS,
-                            mp_drawing_styles.get_default_hand_landmarks_style(),
-                            mp_drawing_styles.get_default_hand_connections_style())
+                    image,
+                    hand_landmarks,
+                    mp_hands.HAND_CONNECTIONS,
+                    mp_drawing_styles.get_default_hand_landmarks_style(),
+                    mp_drawing_styles.get_default_hand_connections_style())
                 # x = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x
                 # y = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y
-                for i in range(0, len(hand_landmarks.landmark)):
+                for i, landmark in enumerate(hand_landmarks.landmark):
                     mc.setBlock(int((0.5 - x0[i]) * 32), 80 - int((y0[i] - 0.5) * 24), 0, param.AIR)
-                    x[i] = hand_landmarks.landmark[i].x
-                    y[i] = hand_landmarks.landmark[i].y
+                    x[i] = landmark.x
+                    y[i] = landmark.y
                     mc.setBlock(int((0.5 - x[i]) * 32), 80 - int((y[i] - 0.5) * 24), 0, param.SEA_LANTERN_BLOCK)
                     x0[i] = x[i]
                     y0[i] = y[i]
