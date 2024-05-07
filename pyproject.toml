@@ -6,8 +6,10 @@ authors = ["naohiro2g <587586+Naohiro2g@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 mediapipe = "^0.10.13"
+streamlit = "^1.34.0"
+streamlit-webrtc = "^0.47.6"
 
 
 [build-system]
