@@ -13,6 +13,35 @@ Mediapipe-Silicon at Pypi: <https://github.com/cansik/mediapipe-silicon>
 ## "Hands": hands and fingers detection and tracking
 
 - [hands_cam.py](./hands_cam.py) : demo for PC with webcam, and FPS display
-- [hands_st_01.py](./hands_st_01.py) : demo as a web application by [Streamlit](https://streamlit.io/)
+
+### How to run hands_cam.py
+
+```bash
+If you have poetry installed:
+$ poetry install
+
+else if you have pyenv installed:
+$ pyenv local 3.10.11
+$ pip install mediapipe opencv-python-headless
+
+
+Get into the virtual environment, then
+$ python hands_cam.py
+
+Press 'esc' key to quit.
+```
 
 <img src="./mediapipe_hands_demo.png" width=320> hands_cam.py
+
+
+### How to run hands_mc.py
+This is a demo for Minecraft remote. You need to have Minecraft Java Edition and remote controll mod installed on your PC. See [Minecraft Remote](https://github.com/Naohiro2g/minecraft_remote) for details.
+
+```bash
+
+
+
+
+Not yet implemented:
+- [hands_st_01.py](./hands_st_01.py) : demo as a web application by [Streamlit](https://streamlit.io/)
+
