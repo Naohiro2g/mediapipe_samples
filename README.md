@@ -3,7 +3,11 @@
 Sample codes for [Mediapipe](https://google.github.io/mediapipe/)
 
 Mediapipe at GitHub: <https://github.com/google/mediapipe>
+
 Mediapipe at Pypi: <https://pypi.org/project/mediapipe/>
+
+### OLD information
+*After the release of Mediapipe 0.8.1.0, or at least 0.9.3, the module is compatible with Apple M1. Although I'm not sure if it's compatible also with M2 or later, it seems OK.*
 
 And for your Apple Silicon, or M1 Mac, you can use mediapipe-silicon module forked from mediapipe and build by [cansik](<https://github.com/cansik/>).
 
