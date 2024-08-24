@@ -37,11 +37,7 @@ Press 'esc' key to quit.
 ### How to run hands_mc.py
 This is a demo for Minecraft remote. You need to have Minecraft Java Edition and remote controll mod installed on your PC. See [Minecraft Remote](https://github.com/Naohiro2g/minecraft_remote) for details.
 
-```bash
-
-
-
-
+### hands_st_01.py
 Not yet implemented:
 - [hands_st_01.py](./hands_st_01.py) : demo as a web application by [Streamlit](https://streamlit.io/)
 
